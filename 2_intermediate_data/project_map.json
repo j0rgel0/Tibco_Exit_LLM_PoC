@@ -1,0 +1,60 @@
+{
+    "artifacts": {
+        ".folder": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "RuleServiceProvider Configuration.sharedrsp": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "vcrepo.dat": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "AESchemas/.folder": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "AESchemas/ae.aeschema": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "AESchemas/corba.aeschema": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "AESchemas/java.aeschema": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "AESchemas/sql.aeschema": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "AESchemas/ae/.folder": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "AESchemas/ae/baseDocument.aeschema": {
+            "type": "unknown",
+            "dependencies": [],
+            "global_vars_refs": []
+        },
+        "defaultVars/defaultVars.substvar": {
+            "type": "global-variables",
+            "dependencies": [],
+            "global_vars_refs": []
+        }
+    },
+    "entry_points": []
+}
