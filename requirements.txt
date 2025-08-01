@@ -1,0 +1,4 @@
+# requirements.txt
+
+# Librería para el parseo avanzado de XML en la Fase 2
+lxml==6.0.0

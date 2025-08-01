@@ -5,13 +5,17 @@
             "dependencies": [],
             "global_vars_refs": []
         },
-        "RuleServiceProvider Configuration.sharedrsp": {
-            "type": "unknown",
-            "dependencies": [],
+        "Process Definition.process": {
+            "type": "process",
+            "dependencies": [
+                "Channels/JMSChannel/NewDestination_0.aeschema",
+                "Events/EventA.aeschema",
+                "RuleServiceProvider Configuration.sharedrsp"
+            ],
             "global_vars_refs": []
         },
-        "vcrepo.dat": {
-            "type": "unknown",
+        "RuleServiceProvider Configuration.sharedrsp": {
+            "type": "shared-rsp",
             "dependencies": [],
             "global_vars_refs": []
         },
@@ -21,22 +25,22 @@
             "global_vars_refs": []
         },
         "AESchemas/ae.aeschema": {
-            "type": "unknown",
+            "type": "schema-ae",
             "dependencies": [],
             "global_vars_refs": []
         },
         "AESchemas/corba.aeschema": {
-            "type": "unknown",
+            "type": "schema-ae",
             "dependencies": [],
             "global_vars_refs": []
         },
         "AESchemas/java.aeschema": {
-            "type": "unknown",
+            "type": "schema-ae",
             "dependencies": [],
             "global_vars_refs": []
         },
         "AESchemas/sql.aeschema": {
-            "type": "unknown",
+            "type": "schema-ae",
             "dependencies": [],
             "global_vars_refs": []
         },
@@ -46,7 +50,7 @@
             "global_vars_refs": []
         },
         "AESchemas/ae/baseDocument.aeschema": {
-            "type": "unknown",
+            "type": "schema-ae",
             "dependencies": [],
             "global_vars_refs": []
         },
@@ -56,5 +60,7 @@
             "global_vars_refs": []
         }
     },
-    "entry_points": []
+    "entry_points": [
+        "Process Definition.process"
+    ]
 }
