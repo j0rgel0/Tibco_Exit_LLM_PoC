@@ -1,0 +1,5 @@
+{
+  "model_name": "gemini-1.5-flash-latest",
+  "temperature": 0.4,
+  "request_delay_seconds": 1
+}

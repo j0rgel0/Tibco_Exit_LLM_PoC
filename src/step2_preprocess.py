@@ -1,33 +1,27 @@
-# src/2_preprocess_artifacts.py (Versión 2.1 - Corregida con lxml)
+# src/step2_preprocess.py
+# (Anteriormente step2_preprocess.py, refactorizado para ser importable)
 
 import os
 import json
-# FIX: Importar 'etree' desde 'lxml' en lugar de 'xml.etree.ElementTree'
 from lxml import etree as ET
 
 # --- Configuración ---
 SOURCE_ROOT = "1_tibco_project_source"
-INTERMEDIATE_DIR = "2_intermediate_data"
+INTERMEDIATE_DIR = "../2_intermediate_data"
 MAP_FILE = os.path.join(INTERMEDIATE_DIR, "project_map.json")
 OUTPUT_DIR = os.path.join(INTERMEDIATE_DIR, "preprocessed")
 
 
 # --- Funciones de Ayuda ---
-# get_namespaces no necesita cambios, lxml es compatible.
 def get_namespaces(xml_file):
     try:
-        # Usamos 'iterparse' de lxml, que es compatible
         return dict([node for _, node in ET.iterparse(xml_file, events=['start-ns'])])
-    except ET.XMLSyntaxError:  # lxml lanza un error diferente
+    except ET.XMLSyntaxError:
         return None
 
 
 # --- Función de Enriquecimiento de Procesos ---
 def enrich_process_file(file_path, dependencies, namespaces):
-    """
-    Extrae la estructura semántica detallada de un archivo .process.
-    """
-    # FIX: Usamos el parser de lxml, que es más robusto
     parser = ET.XMLParser(remove_blank_text=True)
     tree = ET.parse(file_path, parser)
     root = tree.getroot()
@@ -50,12 +44,10 @@ def enrich_process_file(file_path, dependencies, namespaces):
         bindings_data = {}
         if input_bindings is not None and len(list(input_bindings)) > 0:
             payload_root = list(input_bindings)[0]
-            bindings_data["event_payload_type"] = payload_root.tag.split('}')[-1]  # Limpiar el namespace
+            bindings_data["event_payload_type"] = payload_root.tag.split('}')[-1]
             mappings = []
-            # Busca recursivamente por 'value-of' para encontrar mapeos
             for value_of in payload_root.xpath('.//xsl:value-of', namespaces=namespaces):
-                # FIX: Ahora .getparent() existe gracias a lxml
-                target_field = value_of.getparent().tag.split('}')[-1]  # Limpiar el namespace
+                target_field = value_of.getparent().tag.split('}')[-1]
                 source_expression = value_of.get('select')
                 mappings.append({"target_field": target_field, "source_expression": source_expression})
             bindings_data["field_mappings"] = mappings
@@ -95,7 +87,7 @@ def enrich_process_file(file_path, dependencies, namespaces):
 
 
 # --- Función Principal ---
-def main():
+def run_preprocessing_phase():
     print("--- Iniciando Fase 2 (v2.1 - lxml): Pre-procesamiento y Enriquecimiento Semántico ---")
 
     if not os.path.exists(MAP_FILE):
@@ -121,10 +113,8 @@ def main():
             print(f"Enriqueciendo: {relative_path}")
             namespaces = get_namespaces(full_path)
             if namespaces is not None:
-                # Añadimos manualmente los namespaces comunes
                 namespaces['pd'] = 'http://xmlns.tibco.com/bw/process/2003'
                 namespaces['xsl'] = 'http://www.w3.org/1999/XSL/Transform'
-
                 enriched_data = enrich_process_file(full_path, data.get("dependencies", []), namespaces)
         else:
             enriched_data = data.copy()
@@ -138,4 +128,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run_preprocessing_phase()

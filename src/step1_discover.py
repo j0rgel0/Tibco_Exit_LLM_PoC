@@ -1,4 +1,5 @@
-# src/1_discover_and_map.py (Versión 4 - Final)
+# src/step1_discover.py
+# (Anteriormente step1_discover.py, refactorizado para ser importable)
 
 import os
 import json
@@ -7,7 +8,7 @@ import re
 
 # --- Configuración ---
 SOURCE_ROOT = "1_tibco_project_source"
-OUTPUT_DIR = "2_intermediate_data"
+OUTPUT_DIR = "../2_intermediate_data"
 OUTPUT_FILE = os.path.join(OUTPUT_DIR, "project_map.json")
 VERBOSE = True
 
@@ -41,6 +42,7 @@ def parse_process_file(file_path, root_dir):
         # 1. Búsqueda por tags específicos de TIBCO BE
         known_ref_tags = ['rspRef', 'eventRef', 'destinationRef']
         for tag_name in known_ref_tags:
+            # Busca en cualquier namespace
             elements = root.findall(f".//{{{namespaces.get('pd', '')}}}{tag_name}")
             if not elements: elements = root.findall(f".//{tag_name}")
 
@@ -102,7 +104,7 @@ def parse_generic_artifact(file_path):
 
 
 # --- Función Principal ---
-def main():
+def run_discovery_phase():
     print("--- Iniciando Fase 1 (Versión 4 - Final): Descubrimiento y Mapeo ---")
 
     if not os.path.isdir(SOURCE_ROOT):
@@ -138,8 +140,6 @@ def main():
             if artifact_data:
                 project_map["artifacts"][relative_path] = artifact_data
 
-    # FIX: El bloque de post-procesamiento ha sido eliminado.
-
     all_processes = {path for path, data in project_map["artifacts"].items() if data.get("type") == "process"}
     entry_points = sorted(list(all_processes - all_called_processes))
     project_map["entry_points"] = entry_points
@@ -155,4 +155,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    run_discovery_phase()

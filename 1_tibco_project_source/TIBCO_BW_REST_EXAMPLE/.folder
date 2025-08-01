@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Repository:repository xmlns:Repository="http://www.tibco.com/xmlns/repo/types/2002">
-    <folder resourceType="ae.rootfolder" name="TIBCO_BW_BE" propLocks="" allowUserToChangeIcon="false" sortContents="false" acceptsResources="true" allowDuplicates="false">
+    <folder resourceType="ae.rootfolder" name="TIBCOBLOG_REST_EXAMPLE" propLocks="" allowUserToChangeIcon="false" sortContents="false" acceptsResources="true" allowDuplicates="false">
         <fixedChildren>AESchemas</fixedChildren>
         <projectProperties>
-            <property key="ae.palette.BEpalette.version" value="5.0.0"/>
             <property key="ae.pallette.tcp.pallette.version" value="5.9.0"/>
             <property key="palette.generalpalette.version" value="5.3.0"/>
             <property key="aa.adapteradministrator.palette.version" value="5.3.0"/>
             <property key="ae.palette.SOAPpalette.version" value="5.9.0"/>
-            <property key="projectName" value="TIBCO_BW_BE"/>
+            <property key="projectName" value="TIBCOBLOG_REST_EXAMPLE"/>
             <property key="ae.palette.Mail.palette.version" value="5.9.0"/>
             <property key="ae.palette.rvpalette.version" value="5.9.0"/>
             <property key="ae.palette.JMS.palette.version" value="5.9.0"/>
             <property key="service.palette.version" value="5.9.0"/>
+            <property key="adb.palette.version" value="6.0.0.8"/>
             <property key="ae.palette.jrmi.palette.version" value="5.9.0"/>
             <property key="ae.palette.Filepalette.version" value="5.9.0"/>
             <property key="ae.palette.FTPpalette.version" value="5.9.0"/>
