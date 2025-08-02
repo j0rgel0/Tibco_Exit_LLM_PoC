@@ -4,3 +4,11 @@
 lxml==6.0.0
 google-generativeai
 python-dotenv
+markdown2
+
+# RAG: Vector DB, Embeddings y Carga de Documentos
+chromadb
+sentence-transformers
+langchain
+pypdf
+PyMuPDF

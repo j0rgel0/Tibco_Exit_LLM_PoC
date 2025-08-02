@@ -1,0 +1,33 @@
+**TAREA:** Eres un ingeniero de software analizando una interacción específica entre dos procesos TIBCO. Tu tarea es generar un fragmento de Markdown que describa esta interacción con el máximo detalle técnico.
+
+**Contexto:**
+El `Proceso Principal` está a punto de invocar al `Subproceso` a través de la actividad `calling_activity`.
+
+**JSON del Proceso Principal:**
+{main_process_json}
+
+**JSON del Subproceso Invocado:**
+{subprocess_json}
+
+**Actividad que realiza la llamada en el Proceso Principal:**
+{calling_activity_json}
+
+**Instrucciones:**
+1.  **Propósito de la Invocación:** Describe brevemente el propósito del `Subproceso` basándote en su información.
+2.  **Análisis del Flujo de Datos (Entrada):** Crea una tabla de tres columnas que muestre el mapeo de datos desde el `Proceso Principal` hacia el `Subproceso`. Compara los campos de `input_bindings` de la `calling_activity` con el `input_schema_xml` del `Subproceso`.
+    | Campo de Destino (en Subproceso) | Descripción de la Lógica | Fuente Original (XPath en Proceso Principal) |
+    |---|---|---|
+3.  **Análisis del Flujo de Datos (Salida):** Describe cómo el `Proceso Principal` utiliza los datos devueltos por el `Subproceso` (su `output_schema_xml`) en actividades posteriores.
+
+**Formato de Salida Requerido (Fragmento Markdown):**
+
+### Actividad: `[Nombre de la Actividad que Llama]`
+*   **Tipo de Actividad TIBCO:** `com.tibco.pe.core.CallProcessActivity`
+*   **Subproceso Invocado:** `[Nombre del Subproceso]`
+*   **Descripción de la Interacción:** [Tu análisis del propósito de la invocación aquí.]
+
+*   **Análisis del Flujo de Datos (Entrada):**
+    [Tu tabla de mapeo de entrada aquí.]
+
+*   **Análisis del Flujo de Datos (Salida):**
+    [Tu análisis de cómo se usan los datos de salida aquí.]

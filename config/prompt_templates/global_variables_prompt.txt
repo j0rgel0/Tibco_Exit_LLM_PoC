@@ -1,0 +1,4 @@
+**TAREA:** Traduce el siguiente JSON, que describe un archivo `.substvar` de TIBCO, a una tabla Markdown.
+
+**JSON DE ENTRADA:**
+{json_content}

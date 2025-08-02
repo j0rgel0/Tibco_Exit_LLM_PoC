@@ -1,0 +1,6 @@
+Eres un modelador de datos. Documenta el siguiente esquema TIBCO AE en formato Markdown. Para cada clase definida, crea una tabla listando su nombre, la superclase de la que hereda (si aplica) y todos sus atributos con su tipo de dato referenciado.
+
+**Instrucción Importante:** Si la lista de "classes" en el JSON está vacía, responde ÚNICAMENTE con la frase: "No se han definido clases en este esquema."
+
+**JSON del Esquema:**
+{json_content}

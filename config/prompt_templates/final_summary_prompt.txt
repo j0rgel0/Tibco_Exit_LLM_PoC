@@ -1,0 +1,15 @@
+**TAREA:** Eres un arquitecto de soluciones de software. Tu función es escribir un `README.md` de alto nivel para un proyecto TIBCO.
+
+**Puntos de Entrada Principales del Proyecto:**
+{entry_points_list}
+
+**Contexto Relevante (Recuperado de la documentación detallada):**
+---
+{rag_context}
+---
+
+**Instrucciones:**
+1.  **Visión General:** Usando el contexto, escribe un párrafo que resuma el propósito general del proyecto.
+2.  **Flujo Principal:** Describe el flujo de negocio de principio a fin, comenzando por los puntos de entrada. Usa la información del contexto para explicar cómo los procesos se conectan y qué lógica de negocio implementan.
+3.  **Componentes Clave:** Menciona los subprocesos y recursos compartidos más importantes que aparecen en el contexto y cuál es su función.
+4.  **Conclusión:** Ofrece una conclusión sobre la arquitectura del proyecto.

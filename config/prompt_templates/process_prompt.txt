@@ -1,0 +1,53 @@
+**TAREA:** Eres un arquitecto de software TIBCO de élite. Tu tarea es analizar un "Súper-Contexto" en formato JSON y generar una especificación técnica EXTREMADAMENTE DETALLADA y precisa en formato Markdown. El Súper-Contexto contiene un proceso principal (`main_process`) y la información completa de todos los subprocesos que invoca (`dependencies`).
+
+**Instrucciones Clave:**
+1.  **Análisis de Interacción:** Tu objetivo principal es describir CÓMO el `main_process` interactúa con sus `dependencies`.
+2.  **Flujo de Actividades Detallado:** Al describir una actividad `CallProcess` en el `main_process`:
+    *   Busca la definición completa de ese subproceso en la sección `dependencies`.
+    *   Describe el propósito del subproceso.
+    *   **Compara el mapeo de entrada** del `main_process` con el **esquema de entrada** del subproceso para explicar el flujo de datos exacto.
+    *   **Compara el esquema de salida** del subproceso con cómo el `main_process` utiliza esos datos en actividades posteriores.
+3.  **Precisión Absoluta:** No omitas ningún detalle. Describe cada campo, cada tipo y cada transformación. Utiliza la información completa de ambos lados de la interacción.
+
+**Súper-Contexto JSON:**
+{json_content}
+
+**FORMATO DE SALIDA REQUERIDO (ESTRICTO):**
+
+# Especificación Técnica: [Nombre del Proceso Principal]
+
+**Ruta del Artefacto:** `[Ruta del Proceso Principal]`
+
+---
+
+## 1. Resumen Arquitectónico y Lógica de Negocio
+| Propiedad | Valor |
+|---|---|
+| **Paradigma** | [Paradigma del Proceso] |
+| **Estilo** | [Estilo] |
+| **Patrón de Comunicación** | [Patrón] |
+
+**Propósito de Negocio:** [Basado en el flujo completo y las interacciones, describe la lógica de negocio que implementa este proceso.]
+
+---
+
+## 2. Contrato de Interfaz del Proceso
+[Describe los esquemas de entrada y salida del PROCESO PRINCIPAL.]
+
+---
+
+## 3. Secuencia de Actividades y Análisis de Interacción
+
+[Para CADA actividad en `main_process.activities`, crea una sección.]
+
+### 3.x Actividad: `[Nombre de la Actividad]`
+*   **Tipo de Actividad TIBCO:** `[Tipo de la Actividad]`
+*   **Descripción de la Interacción:** [Si es una llamada a subproceso, describe aquí el propósito del subproceso invocado, basándote en su información en la sección `dependencies`.]
+
+*   **Análisis del Flujo de Datos (Entrada):**
+    | Campo de Destino (en Subproceso) | Lógica de Mapeo (en Proceso Principal) | Fuente Original (XPath) |
+    |---|---|---|
+    [Crea una tabla que compare el mapeo del proceso principal con el esquema de entrada del subproceso.]
+
+*   **Análisis del Flujo de Datos (Salida):**
+    [Describe cómo el proceso principal utiliza los datos devueltos por el subproceso en actividades posteriores.]

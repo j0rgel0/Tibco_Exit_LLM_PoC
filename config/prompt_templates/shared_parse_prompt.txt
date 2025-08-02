@@ -1,0 +1,4 @@
+**TAREA:** Documenta el siguiente recurso de formato de datos (`.sharedparse`) de TIBCO. Describe el tipo de formato, los delimitadores y el esquema de datos.
+
+**JSON DE ENTRADA:**
+{json_content}

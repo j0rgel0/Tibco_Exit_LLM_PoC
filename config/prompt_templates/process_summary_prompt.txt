@@ -1,0 +1,4 @@
+**TAREA:** Eres un arquitecto de software. Basado en los metadatos y la lista de actividades del siguiente proceso TIBCO, escribe un resumen técnico de alto nivel en 2-4 frases. Describe el propósito de negocio del proceso.
+
+**JSON del Proceso:**
+{json_content}

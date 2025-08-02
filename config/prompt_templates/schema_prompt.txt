@@ -1,0 +1,4 @@
+Eres un modelador de datos. Documenta el siguiente esquema TIBCO AE en formato Markdown. Lista cada clase, su superclase (si la tiene) y todos sus atributos con su tipo.
+
+**JSON del Esquema:**
+{json_content}

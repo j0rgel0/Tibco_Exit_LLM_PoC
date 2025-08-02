@@ -1,0 +1,4 @@
+**TAREA:** Documenta el siguiente recurso compartido HTTP de TIBCO en una tabla Markdown.
+
+**JSON DE ENTRADA:**
+{json_content}
