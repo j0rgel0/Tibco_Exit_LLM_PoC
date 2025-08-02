@@ -1,54 +1,10 @@
 {
-    "name": "Process Definition.process",
-    "path": "1_tibco_project_source/TIBCO_BW_BE/Process Definition.process",
     "type": "process",
     "dependencies": [
         "Channels/JMSChannel/NewDestination_0.aeschema",
         "Events/EventA.aeschema",
         "RuleServiceProvider Configuration.sharedrsp"
     ],
-    "starter": {
-        "name": "Timer",
-        "type": "com.tibco.plugin.timer.TimerEventSource",
-        "config": {
-            "StartTime": "1361093595000",
-            "Frequency": "true",
-            "TimeInterval": "1",
-            "FrequencyIndex": "Second"
-        }
-    },
-    "activities": [
-        {
-            "name": "Send Event",
-            "type": "com.tibco.be.bw.plugin.BESendEvent",
-            "config": {
-                "rspRef": "/RuleServiceProvider Configuration.sharedrsp",
-                "eventRef": "/Events/EventA",
-                "entityNS": "/Events/EventA",
-                "entityName": "EventA",
-                "destinationRef": "/Channels/JMSChannel/NewDestination_0"
-            },
-            "input_bindings": {
-                "event_payload_type": "BESendEventInput",
-                "field_mappings": [
-                    {
-                        "target_field": "Test1",
-                        "source_expression": "$Timer/ns:TimerOutputSchema/Time"
-                    }
-                ]
-            }
-        }
-    ],
-    "transitions": [
-        {
-            "from": "Timer",
-            "to": "Send Event",
-            "condition": "always"
-        },
-        {
-            "from": "Send Event",
-            "to": "End",
-            "condition": "always"
-        }
-    ]
+    "global_vars_refs": [],
+    "path": "Process Definition.process"
 }

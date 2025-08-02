@@ -1,0 +1,54 @@
+# ###################################################################
+# ## Archivo .gitignore para el proyecto Tibco_Exit_LLM_PoC        ##
+# ###################################################################
+
+# --- Archivos de Entorno y Secretos ---
+# NUNCA subir archivos .env a un repositorio. Contienen secretos como API keys.
+# En su lugar, se suele crear un archivo .env.example con la estructura vacía.
+.env
+.env.*
+!.env.example
+
+# --- Carpetas de Datos Generados y Salidas del Pipeline ---
+# Estas carpetas contienen datos que se generan al ejecutar los scripts.
+# No deben formar parte del control de versiones, ya que se pueden reproducir.
+/2_intermediate_data/
+/3_output_documentation/
+
+# --- Archivos de Python (Bytecode, Caches, Entornos Virtuales) ---
+# Ignorar el caché de bytecode de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar carpetas de entornos virtuales de Python
+# Los nombres comunes son venv, env, .venv, .env
+venv/
+.venv/
+env/
+.env/
+
+# Ignorar archivos y carpetas de distribución de paquetes
+dist/
+build/
+*.egg-info/
+/downloads/
+/eggs/
+.eggs/
+
+# --- Configuración de IDE y Editores ---
+# Ignorar archivos de configuración específicos del desarrollador
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Archivos del Sistema Operativo ---
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db

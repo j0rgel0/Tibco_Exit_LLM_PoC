@@ -1,6 +1,4 @@
 {
     "type": "global-variables",
-    "dependencies": [],
-    "global_vars_refs": [],
     "path": "defaultVars/defaultVars.substvar"
 }

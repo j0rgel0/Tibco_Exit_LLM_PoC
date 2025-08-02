@@ -1,54 +1,32 @@
-# Proceso: Process Definition.process
+# Proceso: N/A
 
-**Ruta:** `1_tibco_project_source/TIBCO_BW_BE/Process Definition.process`
+**Ruta:** `Process Definition.process`
 
 ---
 
 ## 1. Resumen Funcional
-
-Este proceso, disparado por un temporizador, envía un evento `EventA` a la cola `NewDestination_0` cada segundo.  El evento contiene un campo `Test1` con el valor de la hora actual obtenida del temporizador.
+Este proceso, cuya funcionalidad específica no se puede determinar a partir de la información proporcionada, se inicia de forma desconocida y su acción principal no está definida en el JSON. Se requiere más información para describir completamente su propósito.
 
 ---
 
 ## 2. Disparador (Starter)
-
-*   **Nombre:** `Timer`
-*   **Tipo:** `com.tibco.plugin.timer.TimerEventSource`
+*   **Nombre:** `N/A`
+*   **Tipo:** `N/A`
 *   **Configuración:**
-    *   Inicio: `1361093595000` (timestamp Unix)
-    *   Frecuencia: `true` (indica que es periódico)
-    *   Intervalo de tiempo: `1`
-    *   Unidad de frecuencia: `Second`
-
+    *   Frecuencia: Se ejecuta cada `N/A` `N/A`.
 
 ---
 
 ## 3. Flujo de Actividades y Datos
-
-El proceso inicia con el temporizador `Timer`, que se activa cada segundo.  Esto dispara la actividad `Send Event`.
-
-**Actividad: Send Event**
-
-*   **Nombre:** `Send Event`
-*   **Tipo:** `com.tibco.be.bw.plugin.BESendEvent`
-*   **Configuración:**
-    *   `rspRef`: `/RuleServiceProvider Configuration.sharedrsp` (Referencia al servicio de reglas)
-    *   `eventRef`: `/Events/EventA` (Referencia al esquema del evento)
-    *   `entityNS`: `/Events/EventA` (Namespace del evento)
-    *   `entityName`: `EventA` (Nombre del evento)
-    *   `destinationRef`: `/Channels/JMSChannel/NewDestination_0` (Referencia al destino JMS)
-*   **Mapeos de datos de entrada:**
-    *   El campo `Test1` se llena con la hora actual del Timer, obtenida a través de la expresión `$Timer/ns:TimerOutputSchema/Time`.
-
-
-Después de enviar el evento, el proceso finaliza. La transición de "Send Event" a "End" siempre se ejecuta.
+No se puede describir el flujo de actividades y datos.  El JSON proporcionado solo indica las dependencias del proceso, pero no describe las actividades internas o el flujo de ejecución.  Se necesita información adicional, como el archivo de definición del proceso (.process), para documentar este apartado.
 
 ---
 
 ## 4. Dependencias
+Lista todas las dependencias del proceso, agrupadas por tipo.
 
 *   **Recursos Compartidos:**
-    *   `RuleServiceProvider Configuration.sharedrsp`
+    *   `RuleServiceProvider Configuration.sharedrsp`  (Se presume que es una configuración para un proveedor de servicios de reglas.)
 *   **Esquemas y Eventos:**
-    *   `Channels/JMSChannel/NewDestination_0.aeschema`
-    *   `Events/EventA.aeschema`
+    *   `Channels/JMSChannel/NewDestination_0.aeschema` (Esquema asociado a un nuevo destino en un canal JMS.)
+    *   `Events/EventA.aeschema` (Esquema de un evento llamado "EventA".)
